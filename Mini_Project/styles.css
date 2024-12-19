@@ -1,0 +1,89 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+}
+
+/* Calculator Container */
+.calculator {
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Display Section */
+.display {
+  background: #222;
+  color: #0f0; /* Green text for classic calculator */
+  font-size: 2rem;
+  padding: 15px;
+  text-align: right;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 60px;
+  overflow: hidden;
+}
+
+/* Buttons Grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Buttons Style */
+.btn {
+  height: 60px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.1s, opacity 0.1s;
+}
+
+.number {
+  background: #eaeaea;
+  color: #333;
+}
+
+.operator {
+  background: #f9b233; /* Orange for operators */
+  color: #fff;
+}
+
+.function {
+  background: #ff5c5c; /* Red for AC and special functions */
+  color: #fff;
+}
+
+.function#square {
+  background: #4caf50; /* Green for square function */
+}
+
+#equals {
+  background: #3b82f6; 
+  color: #fff;
+  grid-column: span 2; /* Make equals button span two columns */
+}
+
+/* Hover Effects */
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
