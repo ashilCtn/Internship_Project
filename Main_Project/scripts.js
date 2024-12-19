@@ -82,9 +82,13 @@ function validateForm() {
 
 // Utility function to validate phone number
 function validatePhone(number) {
-  const phoneRegex = /^[0-9]{10,15}$/; // Accepts numbers with a length between 10 and 15
-  return phoneRegex.test(number.trim());
+  
+  const phoneRegex = /^(\+?\d{1,3}[-.\s]?)?(\(?\d{1,4}\)?[-.\s]?)?[\d]{7,10}$/; // Regex allows optional spaces, dashes, and parentheses for formatting
+  const cleanedNumber = number.replace(/\D/g, ''); // Remove any non-digit characters
+  
+  return cleanedNumber.length === 10 && phoneRegex.test(number.trim());
 }
+
 
 // Utility functions to show and clear errors
 function showError(elementId, message) {
